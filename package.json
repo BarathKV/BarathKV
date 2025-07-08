@@ -1,4 +1,5 @@
 {
+  "homepage": "http://BarathKV.github.io/BarathKV",
   "name": "rsbuild-react-js",
   "version": "1.0.0",
   "private": true,
@@ -6,13 +7,16 @@
   "scripts": {
     "build": "rsbuild build",
     "dev": "rsbuild dev --open",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "postcss-loader": "^8.1.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.4.2",

@@ -1,55 +1,37 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// ===== NavBar Component =====
-function NavBar({ activePage, setActivePage }) {
+function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <h1 className="text-xl font-bold text-indigo-600">John Doe</h1>
+    <nav className={`bg-white shadow-md p-4 sticky top-0 z-50 rounded-b-lg border-b border-gray-200 transition-all`}>
+      <div className="container mx-auto flex justify-center items-center">
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          {['HOME', 'PROJECTS', 'COURSE', 'ACADEMICS', 'EVENTS AND EXPERIENCE'].map((page) => (
-            <li key={page}>
-              <button
-                onClick={() => setActivePage(page)}
-                className={`capitalize hover:text-indigo-600 transition-colors ${
-                  activePage === page ? 'text-indigo-600 font-semibold' : ''
-                }`}
-              >
-                {page}
-              </button>
-            </li>
-          ))}
+          <li><Link to="/" className="capitalize hover:text-indigo-600 transition-colors">Home</Link></li>
+          <li><Link to="/projects" className="capitalize hover:text-indigo-600 transition-colors">Projects</Link></li>
+          <li><Link to="/courses" className="capitalize hover:text-indigo-600 transition-colors">Courses</Link></li>
+          <li><Link to="/academics" className="capitalize hover:text-indigo-600 transition-colors">Academics</Link></li>
         </ul>
+
+      </div>
 
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-      </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <ul className="md:hidden bg-white rounded-lg shadow-lg mt-2 p-4 space-y-2">
-          {['HOME', 'PROJECTS', 'COURSE', 'ACADEMICS', 'EVENTS AND EXPERIENCE'].map((page) => (
-            <li key={page}>
-              <button
-                onClick={() => {
-                  setActivePage(page);
-                  setIsMenuOpen(false);
-                }}
-                className={`w-full text-left capitalize py-2 px-4 rounded-md transition-colors ${
-                  activePage === page ? 'bg-indigo-100 text-indigo-600' : 'hover:bg-gray-100'
-                }`}
-              >
-                {page}
-              </button>
-            </li>
-          ))}
+        <ul className={`md:hidden mt-2 p-4 rounded-lg shadow-lg space-y-2 bg-white`}>
+          <li><Link to="/" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/projects" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="/courses" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Courses</Link></li>
+          <li><Link to="/academics" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Academics</Link></li>
         </ul>
       )}
     </nav>

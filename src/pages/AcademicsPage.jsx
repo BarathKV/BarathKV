@@ -4,34 +4,104 @@ import SemesterDropDown from "../components/SemesterDropDown";
 function AcademicsPage() {
   const academics = {
     college: {
-      degree: "B.Tech Computer Science",
-      institution: "XYZ University",
-      cgpa: "8.9",
+      degree: "B.Tech in Computer Science and Engineering",
+      institution: "SRM Institute of Science and Technology",
+      cgpa: "9.55",
       semesters: [
         {
           name: "Semester 1",
-          gpa: "9.1",
-          courses: ["Programming Basics", "Mathematics I", "Physics"]
+          gpa: "9.5",
+          courses: [
+            "Communicative English",
+            "Calculus And Linear Algebra",
+            "Semiconductor Physics And Computational Methods",
+            "Introduction To Computational Biology",
+            "Programming For Problem Solving",
+            "Engineering Graphics And Design",
+            "Professional Skills And Practices"
+          ]
         },
         {
           name: "Semester 2",
-          gpa: "8.7",
-          courses: ["Data Structures", "Mathematics II", "Chemistry"]
+          gpa: "8.739",
+          courses: [
+            "German",
+            "Advanced Calculus And Complex Analysis",
+            "Chemistry",
+            "Electrical And Electronics Engineering",
+            "Philosophy Of Engineering",
+            "Object Oriented Design And Programming",
+            "Environmental Science",
+            "General Aptitude",
+            "Basic Civil And Mechanical Workshop",
+            "National Service Scheme"
+          ]
         },
         {
           name: "Semester 3",
-          gpa: "9.0",
-          courses: ["Algorithms", "Operating Systems", "Database Systems"]
+          gpa: "9.826",
+          courses: [
+            "Transforms And Boundary Value Problems",
+            "Data Structures And Algorithms",
+            "Operating Systems",
+            "Computer Organization And Architecture",
+            "Advanced Programming Practice",
+            "Design Thinking And Methodology",
+            "Professional Ethics",
+            "Verbal Reasoning"
+          ]
+        },
+        {
+          name: "Semester 4",
+          gpa: "9.650",
+          courses: [
+            "Probability And Queueing Theory",
+            "Design And Analysis Of Algorithms",
+            "Database Management Systems",
+            "Artificial Intelligence",
+            "Internet Of Things",
+            "Social Engineering",
+            "Critical And Creative Thinking Skills",
+            "Universal Human Values - Ii: Understanding Harmony And Ethical Human Conduct"
+          ]
+        },
+        {
+          name: "Semester 5",
+          gpa: "9.48",
+          courses: [
+            "Discrete Mathematics",
+            "Formal Language And Automata",
+            "Computer Networks",
+            "Full Stack Web Development",
+            "Short Range Wireless Communication",
+            "Indian Art Form",
+            "Machine Learning",
+            "Community Connect"
+          ]
+        },
+        {
+          name: "Semester 6",
+          gpa: "10.0",
+          courses: [
+            "Software Engineering and Project Management",
+            "Compiler Design",
+            "Data SCience",
+            "Data Mining and Analytics",
+            "Natural Language Processing",
+            "TQM and Reliability Engineering",
+            "Indian Traditional Knowledge",
+            "Massive Open Online Course (MOOC) - Edge Computing"
+          ]
         }
       ]
     },
     grade12: {
       board: "CBSE",
-      percentage: "92%"
+      percentage: "85.6%"
     },
     grade10: {
       board: "CBSE",
-      percentage: "95%"
+      percentage: "86.8%"
     }
   };
 
@@ -41,8 +111,9 @@ function AcademicsPage() {
 
       {/* College Section */}
       <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-        <h3 className="text-xl font-semibold mb-4">{academics.college.degree} at {academics.college.institution}</h3>
-        <p className="mb-4">Current CGPA: <span className="font-medium">{academics.college.cgpa}</span></p>
+        <h3 className="text-xl font-semibold mb-4">{academics.college.degree}</h3>
+        <h2 className="text-l mb-4">at {academics.college.institution}</h2>
+        <p className="mb-4">Current CGPA: <span className=" text-indigo-600 font-semibold">{academics.college.cgpa}</span></p>
         <div className="space-y-4">
           {academics.college.semesters.map((semester, index) => (
             <SemesterDropDown key={index} semester={semester} />
