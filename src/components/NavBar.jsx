@@ -10,7 +10,7 @@ function NavBar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          <li><Link to="/" className="capitalize hover:text-indigo-600 transition-colors">Home</Link></li>
+          <li><Link to="/home" className="capitalize hover:text-indigo-600 transition-colors">Home</Link></li>
           <li><Link to="/projects" className="capitalize hover:text-indigo-600 transition-colors">Projects</Link></li>
           <li><Link to="/courses" className="capitalize hover:text-indigo-600 transition-colors">Courses</Link></li>
           <li><Link to="/academics" className="capitalize hover:text-indigo-600 transition-colors">Academics</Link></li>
@@ -28,7 +28,7 @@ function NavBar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <ul className={`md:hidden mt-2 p-4 rounded-lg shadow-lg space-y-2 bg-white`}>
-          <li><Link to="/" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/home" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
           <li><Link to="/projects" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
           <li><Link to="/courses" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Courses</Link></li>
           <li><Link to="/academics" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Academics</Link></li>

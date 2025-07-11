@@ -14,7 +14,7 @@ export default function App() {
       <NavBar />
       <main className="ml-8 mx-auto px-4 py-8">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/academics" element={<AcademicsPage />} />
