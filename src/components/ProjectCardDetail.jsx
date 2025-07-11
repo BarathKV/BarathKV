@@ -21,7 +21,7 @@ function ProjectCardDetail({ project }) {
           </a>
         </div>
         <div className="flex items-center justify-center p-6 bg-gray-50">
-          <img src={project.image} alt={project.title} className="m-8 rounded-lg h-full w-full object-cover shadow-md" />
+          <img src={project.image} alt={project.title} className="m-8 rounded-lg max-w-full max-h-full object-contain shadow-md" />
         </div>
       </div>
     </div>

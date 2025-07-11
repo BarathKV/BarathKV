@@ -10,7 +10,11 @@ function HomePage() {
   const personalInfo = {
     name: "Barath Kamalakkannan Vani",
     role: "Software Developer",
-    bio: "INTRO CONTENT TO BE PUT IN ",
+    bio: `Final year Computer Science and Engineering (Core) student at SRMIST with foundational
+          knowledge in Data Structures and Algorithms Analysis; Database Systems (both SQL and
+          NoSQL) and Object-Oriented Programming. Gained further practical knowledge by working in
+          applications using python, Spring Boot, React.js, Node.js, and Express.js in various hackathons
+          with multiple team members in a short span of preparation time.`,
   };
 
   const experiences = [
@@ -18,8 +22,9 @@ function HomePage() {
       company: "AptSkills",
       role: "IT Intern",
       duration: "Jan 2025 - Apr 2025",
-      description: "Worked on a python module “Data Extraction from RTF to Json” development team. Contributed in performing unit tests and documenting the module for client.",
-      frameworks: ["Python","pytest"],
+      description:
+        "Worked on a python module “Data Extraction from RTF to Json” development team. Contributed in performing unit tests and documenting the module for client.",
+      frameworks: ["Python", "pytest"],
     },
   ];
 
@@ -53,7 +58,7 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Social Section */}
+      {/* Social Section
       <div className="flex justify-center space-x-6">
         <a href="mailto:example@example.com" className="flex items-center text-indigo-600 hover:text-indigo-800">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail">
@@ -88,28 +93,31 @@ function HomePage() {
           </svg>
           <span className="ml-2">LeetCode</span>
         </a>
-      </div>
+      </div> */}
 
       {/* Experience Section */}
-      <div className="md:w-1/2 flex flex-col">
-        <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-6">Experience</h3>
-          <div className="flex-1">
-            {experiences.map((exp, index) => (
-              <ExperienceCard key={index} experience={exp} />
-            ))}
+      <div className="flex flex-col md:flex-row md:gap-6">
+        {/* Experience Section */}
+        <div className="md:w-1/2 flex flex-col">
+          <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
+            <h3 className="text-2xl font-semibold mb-6">Experience</h3>
+            <div className="flex-1">
+              {experiences.map((exp, index) => (
+                <ExperienceCard key={index} experience={exp} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Events Section */}
-      <div className="md:w-1/2 flex flex-col">
-        <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-6">Event</h3>
-          <div className="flex-1 space-y-6">
-            {events.map((event, index) => (
-              <EventCard key={index} event={event} />
-            ))}
+        {/* Events Section */}
+        <div className="md:w-1/2 flex flex-col">
+          <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
+            <h3 className="text-2xl font-semibold mb-6">Event</h3>
+            <div className="flex-1 space-y-6">
+              {events.map((event, index) => (
+                <EventCard key={index} event={event} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
