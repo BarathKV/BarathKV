@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "rsbuild build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
     "predeploy": "npm run build",

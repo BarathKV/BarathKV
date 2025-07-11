@@ -2,18 +2,21 @@ import { pluginReact } from '@rsbuild/plugin-react';
 
 export default {
   plugins: [pluginReact()],
-  outputDir: 'dist',
-  assetsDir: 'static',
-  publicPath: './',
+  // outputDir: 'dist',
+  // assetsDir: 'static',
+  // publicPath: './',
+  output:{
+    publicPath: '/BarathKV/',
+  },
   html: {
     title: 'BarathKV - Portfolio',
   },
-  devServer: {
-    historyApiFallback: true,
-  },
-  build: {
-    historyApiFallback: true,
-  },
+  // devServer: {
+  //   historyApiFallback: true,
+  // },
+  // build: {
+  //   historyApiFallback: true,
+  // },
   module: {
     rules: [
       {
