@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/BarathKV/", // 👈 This is important
+  base: "/BarathKV/",
   plugins: [react(), tailwindcss()],
 });

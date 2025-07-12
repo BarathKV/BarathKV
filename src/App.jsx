@@ -14,7 +14,7 @@ export default function App() {
     <div className="bg-gray-50 text-gray-800 transition-colors duration-300">
       {/* <NavBar /> */}
       <NavBar activePage={activePage} setActivePage={setActivePage} />
-      <main className="ml-16 mx-auto px-4 py-8">
+      <main className="ml-4 mr-4 mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {activePage === "HOME" && <HomePage />}
         {activePage === "PROJECTS" && <ProjectsPage />}
         {activePage === "ACADEMICS" && <AcademicsPage />}

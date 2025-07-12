@@ -10,7 +10,7 @@ function CourseCard({ course }) {
         <div className="p-6 flex flex-col justify-center">
           <h3 className="text-xl font-semibold mb-1">{course.title}</h3>
           <p className="text-gray-600 mb-1">Provided by {course.provider}</p>
-          <p className="text-gray-500 text-sm mb-3">Issued {course.issued}</p>
+          <p className="text-gray-500 text-sm mb-3">{course.issued}</p>
           <a href={course.certificateLink} className="text-indigo-600 hover:underline inline-flex items-center mt-auto">
             View Certificate
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

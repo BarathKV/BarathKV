@@ -20,14 +20,14 @@ function CoursesPage() {
       certificateLink: "https://www.coursera.org/account/accomplishments/verify/R1EL1SYRPPUG"
     },
     {
-      title: "Gold in Cloud Computing",
+      title: "Edge Computing - Gold Medal",
       provider: "IITKGP - NPTEL",
       issued: "Jan 2025 - Mar 2025",
       image: MOOC,
       certificateLink: "https://internalapp.nptel.ac.in/NOC/NOC25/SEM1/Ecertificates/106/noc25-cs28/Course/NPTEL25CS28S34330428201307580.pdf"
     },
     {
-      title: "Demystifying Networks",
+      title: "Demystifying Networks - Top 1%",
       provider: "IITB - NPTEL",
       issued: "Jul 2024 - Aug 2024",
       image: CN,
@@ -41,7 +41,7 @@ function CoursesPage() {
       certificateLink: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/106/noc24-cs81/Course/NPTEL24CS81S43310257502692281.pdf"
     },
     {
-      title: "Fundamental Algorithm: Design and Analysis",
+      title: "Fundamental Algorithm: Design and Analysis - Top 5%",
       provider: "IITKGP  - NPTEL",
       issued: "Jan 2024 - Feb 2024",
       image: DAA,

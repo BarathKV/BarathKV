@@ -13,8 +13,8 @@ function NavBar({ activePage, setActivePage }) {
             <li key={page}>
               <button
                 onClick={() => setActivePage(page)}
-                className={`capitalize hover:text-indigo-600 transition-colors ${
-                  activePage === page ? 'text-indigo-600 font-semibold' : ''
+                className={`font-bold text-xl capitalize hover:bg-gray-200 transition-colors p-1 rounded-md ${
+                  activePage === page ? 'text-indigo-600 font-semibold hover:bg-gray-100' : ''
                 }`}
               >
                 {page}
@@ -43,7 +43,7 @@ function NavBar({ activePage, setActivePage }) {
                   setIsMenuOpen(false);
                 }}
                 className={`w-full text-left capitalize py-2 px-4 rounded-md transition-colors ${
-                  activePage === page ? 'bg-indigo-100 text-indigo-600' : 'hover:bg-gray-100'
+                  activePage === page ? 'bg-indigo-100 text-indigo-600 bg-grey-50' : 'hover:bg-gray-100'
                 }`}
               >
                 {page}

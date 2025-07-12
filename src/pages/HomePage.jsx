@@ -2,6 +2,7 @@ import profileImage from "../assets/profile.jpg";
 
 import ExperienceCard from "../components/ExprienceCard";
 import EventCard from "../components/EventCard";
+import SkillCard from "../components/SkillCard";
 
 import SIH from "../assets/SIH.jpg";
 
@@ -43,17 +44,17 @@ function HomePage() {
   return (
     <section className="space-y-12">
       {/* Hero Section */}
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-4">
-          <h2 className="text-4xl font-bold">{personalInfo.name}</h2>
-          <p className="text-xl text-indigo-600">{personalInfo.role}</p>
-          <p className="text-lg leading-relaxed">{personalInfo.bio}</p>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+        <div className="space-y-4 md:col-span-3">
+          <h2 className="text-4xl font-bold text-justify">{personalInfo.name}</h2>
+          <p className="text-xl text-indigo-600 text-justify">{personalInfo.role}</p>
+          <p className="text-lg leading-relaxed text-justify">{personalInfo.bio}</p>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center md:col-span-1">
           <img
             src={profileImage}
             alt="Profile"
-            className="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-indigo-200"
+            className="rounded-2xl shadow-lg w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-indigo-400"
           />
         </div>
       </div>
@@ -95,9 +96,8 @@ function HomePage() {
         </a>
       </div> */}
 
-      {/* Experience Section */}
-      <div className="flex flex-col md:flex-row md:gap-6">
-        {/* Experience Section */}
+      {/* Achievements Section */}
+      <div className="flex flex-col gap-4 md:flex-row md:gap-6">
         <div className="md:w-1/2 flex flex-col">
           <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
             <h3 className="text-2xl font-semibold mb-6">Experience</h3>
@@ -113,13 +113,34 @@ function HomePage() {
         <div className="md:w-1/2 flex flex-col">
           <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col">
             <h3 className="text-2xl font-semibold mb-6">Event</h3>
-            <div className="flex-1 space-y-6">
+            <div className="flex-1">
               {events.map((event, index) => (
                 <EventCard key={index} event={event} />
               ))}
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Skills Section */}
+      <h3 className="text-2xl font-semibold mb-6">Skills</h3>
+      <div className="flex flex-wrap gap-4 w-full">
+        <SkillCard
+          title="Languages"
+          skills={["C++", "Python", "C", "Java", " JavaScript"]}
+        />
+        <SkillCard
+          title="Libraries/Frameworks"
+          skills={["React.js", "Node.js", "Spring Boot", "Express.js"]}
+        />
+        <SkillCard
+          title="Tools"
+          skills={["Git", "MS Office", "Figma"]}
+        />
+        <SkillCard
+          title="Soft Skills"
+          skills={["Team Player", "Problem Solving", "Adaptability"]}
+        />
       </div>
     </section>
   );
