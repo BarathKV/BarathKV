@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
@@ -9,18 +9,22 @@ import AcademicsPage from "./pages/AcademicsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 
 export default function App() {
-  const [activePage, setActivePage] = useState("HOME");
   return (
-    <div className="bg-gray-50 text-gray-800 transition-colors duration-300">
-      {/* <NavBar /> */}
-      <NavBar activePage={activePage} setActivePage={setActivePage} />
-      <main className="ml-4 mr-4 mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        {activePage === "HOME" && <HomePage />}
-        {activePage === "PROJECTS" && <ProjectsPage />}
-        {activePage === "ACADEMICS" && <AcademicsPage />}
-        {activePage === "COURSE" && <CoursesPage />}
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="bg-gray-50 text-gray-800 transition-colors duration-300">
+        <NavBar />
+        <main className="mx-auto px-4 py-8">
+          <Routes>
+            {/* <Route path="/" element={<HomePage />} /> */}
+            <Route path="BarathKV/" element={<HomePage />} />
+            <Route path="BarathKV/projects" element={<ProjectsPage />} />
+            <Route path="BarathKV/courses" element={<CoursesPage />} />
+            <Route path="BarathKV/academics" element={<AcademicsPage />} />
+            <Route path="BarathKV/*" element={<HomePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }

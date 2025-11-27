@@ -11,11 +11,10 @@ function HomePage() {
   const personalInfo = {
     name: "Barath Kamalakkannan Vani",
     role: "Software Developer",
-    bio: `Final year Computer Science and Engineering (Core) student at SRMIST with foundational
-          knowledge in Data Structures and Algorithms Analysis; Database Systems (both SQL and
-          NoSQL) and Object-Oriented Programming. Gained further practical knowledge by working in
-          applications using python, Spring Boot, React.js, Node.js, and Express.js in various hackathons
-          with multiple team members in a short span of preparation time.`,
+    bio: `Final-year Computer Science and Engineering (Core) student at SRMIST with strong foundations in
+          software development, AI, and ML systems. Gained experience and exposure to diverse technologies
+          through active participation in hackathons, contributing to innovative projects in both academic and
+          industry settings.`,
   };
 
   const experiences = [
@@ -44,57 +43,57 @@ function HomePage() {
   return (
     <section className="space-y-12">
       {/* Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-        <div className="space-y-4 md:col-span-3">
-          <h2 className="text-4xl font-bold text-justify">{personalInfo.name}</h2>
-          <p className="text-xl text-indigo-600 text-justify">{personalInfo.role}</p>
-          <p className="text-lg leading-relaxed text-justify">{personalInfo.bio}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
+          <div className="space-y-4 lg:col-span-3 lg:text-left text-center">
+            <h2 className="text-4xl font-bold text-justify">{personalInfo.name}</h2>
+            <p className="text-xl text-indigo-600 text-justify">{personalInfo.role}</p>
+            <p className="text-lg leading-relaxed text-justify">{personalInfo.bio}</p>
+          </div>
+          <div className="lg:col-span-1 lg:justify-self-end justify-self-center">
+            <img
+          src={profileImage}
+          alt="Profile"
+          className="rounded-2xl shadow-lg w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-indigo-400"
+            />
+          </div>
         </div>
-        <div className="flex justify-center md:col-span-1">
-          <img
-            src={profileImage}
-            alt="Profile"
-            className="rounded-2xl shadow-lg w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-indigo-400"
-          />
-        </div>
-      </div>
 
-      {/* Social Section
-      <div className="flex justify-center space-x-6">
-        <a href="mailto:example@example.com" className="flex items-center text-indigo-600 hover:text-indigo-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail">
-            <path d="M4 4h16v16H4z" />
-            <path d="M22 6l-10 7L2 6" />
-          </svg>
-          <span className="ml-2">Email</span>
-        </a>
-        <a href="tel:+1234567890" className="flex items-center text-indigo-600 hover:text-indigo-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-phone">
-            <path d="M22 16.92V22a2 2 0 0 1-2.18 2A19.88 19.88 0 0 1 2 4.18 2 2 0 0 1 4 2h5.08a2 2 0 0 1 2 1.72l1.2 5.36a2 2 0 0 1-.45 1.72L9.61 12.39a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 1.72-.45l5.36 1.2a2 2 0 0 1 1.72 2z" />
-          </svg>
-          <span className="ml-2">Phone</span>
-        </a>
-        <a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
-            <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-          <span className="ml-2">LinkedIn</span>
-        </a>
-        <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
-            <path d="M9 19c-5 1-5-2-7-2m14 4v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.5c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.61V22" />
-          </svg>
-          <span className="ml-2">GitHub</span>
-        </a>
-        <a href="https://leetcode.com/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-code">
-            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-          </svg>
-          <span className="ml-2">LeetCode</span>
-        </a>
-      </div> */}
+        {/* Social Section
+        <div className="flex justify-center space-x-6">
+          <a href="mailto:example@example.com" className="flex items-center text-indigo-600 hover:text-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail">
+          <path d="M4 4h16v16H4z" />
+          <path d="M22 6l-10 7L2 6" />
+            </svg>
+            <span className="ml-2">Email</span>
+          </a>
+          <a href="tel:+1234567890" className="flex items-center text-indigo-600 hover:text-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-phone">
+          <path d="M22 16.92V22a2 2 0 0 1-2.18 2A19.88 19.88 0 0 1 2 4.18 2 2 0 0 1 4 2h5.08a2 2 0 0 1 2 1.72l1.2 5.36a2 2 0 0 1-.45 1.72L9.61 12.39a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 1.72-.45l5.36 1.2a2 2 0 0 1 1.72 2z" />
+            </svg>
+            <span className="ml-2">Phone</span>
+          </a>
+          <a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
+          <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6z" />
+          <rect x="2" y="9" width="4" height="12" />
+          <circle cx="4" cy="4" r="2" />
+            </svg>
+            <span className="ml-2">LinkedIn</span>
+          </a>
+          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
+          <path d="M9 19c-5 1-5-2-7-2m14 4v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.5c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.61V22" />
+            </svg>
+            <span className="ml-2">GitHub</span>
+          </a>
+          <a href="https://leetcode.com/example" target="_blank" rel="noopener noreferrer" className="flex items-center text-indigo-600 hover:text-indigo-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-code">
+          <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+            </svg>
+            <span className="ml-2">LeetCode</span>
+          </a>
+        </div> */}
 
       {/* Achievements Section */}
       <div className="flex flex-col gap-4 md:flex-row md:gap-6">

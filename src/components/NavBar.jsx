@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function NavBar({ activePage, setActivePage }) {
+function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -9,47 +10,28 @@ function NavBar({ activePage, setActivePage }) {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
-          {['HOME', 'PROJECTS', 'COURSE', 'ACADEMICS'].map((page) => (
-            <li key={page}>
-              <button
-                onClick={() => setActivePage(page)}
-                className={`font-bold text-xl capitalize hover:bg-gray-200 transition-colors p-1 rounded-md ${
-                  activePage === page ? 'text-indigo-600 font-semibold hover:bg-gray-100' : ''
-                }`}
-              >
-                {page}
-              </button>
-            </li>
-          ))}
+          <li><Link to="BarathKV/" className="capitalize hover:text-indigo-600 transition-colors">Home</Link></li>
+          <li><Link to="BarathKV/projects" className="capitalize hover:text-indigo-600 transition-colors">Projects</Link></li>
+          <li><Link to="BarathKV/courses" className="capitalize hover:text-indigo-600 transition-colors">Courses</Link></li>
+          <li><Link to="BarathKV/academics" className="capitalize hover:text-indigo-600 transition-colors">Academics</Link></li>
         </ul>
 
       </div>
 
-      {/* Mobile Menu Button */}
-      <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+        {/* Mobile Menu Button */}
+        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
         <ul className={`md:hidden mt-2 p-4 rounded-lg shadow-lg space-y-2 bg-white`}>
-          {['HOME', 'PROJECTS', 'COURSE', 'ACADEMICS'].map((page) => (
-            <li key={page}>
-              <button
-                onClick={() => {
-                  setActivePage(page);
-                  setIsMenuOpen(false);
-                }}
-                className={`w-full text-left capitalize py-2 px-4 rounded-md transition-colors ${
-                  activePage === page ? 'bg-indigo-100 text-indigo-600 bg-grey-50' : 'hover:bg-gray-100'
-                }`}
-              >
-                {page}
-              </button>
-            </li>
-          ))}
+          <li><Link to="BarathKV/" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="BarathKV/projects" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="BarathKV/courses" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Courses</Link></li>
+          <li><Link to="BarathKV/academics" className="block py-2 px-4 capitalize" onClick={() => setIsMenuOpen(false)}>Academics</Link></li>
         </ul>
       )}
     </nav>
